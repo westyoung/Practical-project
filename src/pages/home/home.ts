@@ -11,7 +11,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import * as firebase from 'firebase';
 import * as moment from 'moment';
-import { setTimeout } from 'timers';
+import { setTimeout } from 'safe-timers';
 
 @Component({
   selector: 'page-home',
@@ -23,7 +23,7 @@ export class HomePage {
   private userEmail : any;
   private userId : any; 
 
-  private masterEmail : any = "master@gmail.com";
+  private masterEmail : any = "master@master.com";
   private masterSwitch: any;
 
   private userProfile = {
