@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color='primary'>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="search()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+      
+    <ion-list>
+        <ion-item (click)='clickNews(news)' *ngFor="let news of newses" >
+            <div style='font-size:4vw; font-weight:BOLD; color:blue; margin-bottom:1vw' text-wrap>{{news.title}}</div>
+            <ion-grid no-padding>
+              <ion-row>
+                <ion-col>
+                    <div style='font-size:3vw; font-weight:BOLD; color:rgb(20, 20, 20)'>{{news.category}}</div>
+                </ion-col>
+                <ion-col>
+                    <div style='font-size:3vw; font-weight:BOLD; color:rgb(20, 20, 20)'>{{news.source}}</div>
+                </ion-col>
+                <ion-col>
+                    <div style='font-size:3vw; font-weight:BOLD; color:rgb(20, 20, 20)'>{{news.date}}</div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-badge item-end color='danger'> {{news.clickCount}}</ion-badge>
+        </ion-item>
+</ion-list>
+
+</ion-content>
+
+
+<ion-footer *ngIf="masterSwitch">
+  <ion-navbar color='primary'>
+    <button ion-button full clear color='light' (click)='gotoManagerPage()'>Manager</button>
+  </ion-navbar>
+</ion-footer>

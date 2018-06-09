@@ -1,0 +1,56 @@
+
+<ion-header>
+
+  <ion-navbar color='primary'>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!--
+binding(ts랑 html 연결)
+
+binding
+
+data
+property
+event
+
+
+directive
+
+ngIf = ""
+ngFor = ""리스트 어레이값을 뿌려줘라
+ngModel = "" 투웨이 바인딩 -> 변수값 변하면 화면 바꿈 들어간값 변하면 변수 바꿈
+
+-->
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="account.name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input type="email" [(ngModel)]="account.email"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="account.password"></ion-input>
+  </ion-item>
+
+  <div padding>
+    <span style='color:red'>
+      Password는 6자리 이상이어야 합니다.
+    </span>
+  </div>
+  <div class='divider' style="width:100%;height:30px"></div>
+  <button ion-button full (click)="signup()">Sign Up</button>
+
+
+
+</ion-content>
